@@ -1,0 +1,7 @@
+name: Dollop
+author: LimeGlass
+description: A Skript addon to hook into Plot plugins.
+version: @version@
+api-version: 1.17
+main: me.limeglass.dollop.Dollop
+depend: [Skript, PlotSquared]
