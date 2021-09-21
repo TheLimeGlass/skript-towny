@@ -1,7 +1,7 @@
-name: Dollop
+name: skript-towny
 author: LimeGlass
-description: A Skript addon to hook into Plot plugins.
+description: A Skript addon to hook into Towny.
 version: @version@
 api-version: 1.17
-main: me.limeglass.dollop.Dollop
-depend: [Skript, PlotSquared]
+main: me.limeglass.towny.Towny
+depend: [Skript, Towny]
