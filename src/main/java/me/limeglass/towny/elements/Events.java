@@ -3,6 +3,9 @@ package me.limeglass.towny.elements;
 import org.bukkit.entity.Player;
 import org.eclipse.jdt.annotation.Nullable;
 
+import com.palmergames.bukkit.towny.event.PreDeleteNationEvent;
+import com.palmergames.bukkit.towny.event.PreDeleteTownEvent;
+import com.palmergames.bukkit.towny.event.PreNewTownEvent;
 import com.palmergames.bukkit.towny.event.TownAddResidentRankEvent;
 import com.palmergames.bukkit.towny.event.TownBlockSettingsChangedEvent;
 import com.palmergames.bukkit.towny.event.TownPreAddResidentEvent;
@@ -10,8 +13,10 @@ import com.palmergames.bukkit.towny.event.TownPreClaimEvent;
 import com.palmergames.bukkit.towny.event.TownPreRenameEvent;
 import com.palmergames.bukkit.towny.event.TownRemoveResidentEvent;
 import com.palmergames.bukkit.towny.event.TownRemoveResidentRankEvent;
+import com.palmergames.bukkit.towny.event.nation.PreNewNationEvent;
 import com.palmergames.bukkit.towny.event.town.TownLeaveEvent;
 import com.palmergames.bukkit.towny.event.town.TownPreUnclaimEvent;
+import com.palmergames.bukkit.towny.object.Nation;
 import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.Town;
 import com.palmergames.bukkit.towny.object.TownBlock;
@@ -188,6 +193,52 @@ public class Events {
 			@Nullable
 			public Town get(TownLeaveEvent event) {
 				return event.getTown();
+			}
+		}, 0);
+		Skript.registerEvent("town create", SimpleEvent.class, PreNewTownEvent.class , "town create");
+		EventValues.registerEventValue(PreNewTownEvent.class, String.class, new Getter<String, PreNewTownEvent>() {
+			@Override
+			@Nullable
+			public String get(PreNewTownEvent event) {
+				return event.getTownName();
+			}
+		}, 0);
+		EventValues.registerEventValue(PreNewTownEvent.class, Player.class, new Getter<Player, PreNewTownEvent>() {
+			@Override
+			@Nullable
+			public Player get(PreNewTownEvent event) {
+				return event.getPlayer();
+			}
+		}, 0);
+		Skript.registerEvent("town delete", SimpleEvent.class, PreDeleteTownEvent.class , "town delete");
+		EventValues.registerEventValue(PreDeleteTownEvent.class, Town.class, new Getter<Town, PreDeleteTownEvent>() {
+			@Override
+			@Nullable
+			public Town get(PreDeleteTownEvent event) {
+				return event.getTown();
+			}
+		}, 0);
+		Skript.registerEvent("nation create", SimpleEvent.class, PreNewNationEvent.class , "nation create");
+		EventValues.registerEventValue(PreNewNationEvent.class, String.class, new Getter<String, PreNewNationEvent>() {
+			@Override
+			@Nullable
+			public String get(PreNewNationEvent event) {
+				return event.getNationName();
+			}
+		}, 0);
+		EventValues.registerEventValue(PreNewNationEvent.class, Town.class, new Getter<Town, PreNewNationEvent>() {
+			@Override
+			@Nullable
+			public Town get(PreNewNationEvent event) {
+				return event.getTown();
+			}
+		}, 0);
+		Skript.registerEvent("nation delete", SimpleEvent.class, PreDeleteNationEvent.class , "nation delete");
+		EventValues.registerEventValue(PreDeleteNationEvent.class, Nation.class, new Getter<Nation, PreDeleteNationEvent>() {
+			@Override
+			@Nullable
+			public Nation get(PreDeleteNationEvent event) {
+				return event.getNation();
 			}
 		}, 0);
 	}
