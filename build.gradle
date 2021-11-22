@@ -33,7 +33,7 @@ dependencies {
 	}
 
 	// Spigot/Bukkit
-	implementation (group: 'org.spigotmc', name: 'spigot-api', version: '1.17.1-R0.1-SNAPSHOT')
+	implementation (group: 'org.spigotmc', name: 'spigot-api', version: '1.18-pre5-R0.1-SNAPSHOT')
 
 	// Towny
 	implementation (group: 'com.github.TownyAdvanced', name: 'Towny', version: '0.97.2.18')
