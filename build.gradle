@@ -15,7 +15,11 @@ repositories {
 		url "https://oss.sonatype.org/content/repositories/snapshots/"
 	}
 
-	// Jitpack for Skript
+	// Skript
+	maven {
+		url 'https://repo.skriptlang.org/releases'
+	}
+
 	maven {
 		url 'https://jitpack.io'
 	}
@@ -28,12 +32,12 @@ dependencies {
 	implementation (group: 'org.eclipse.jdt', name: 'org.eclipse.jdt.annotation', version: '2.2.600')
 
 	// Skript
-	implementation (group: 'com.github.SkriptLang.Skript', name: 'Skript', version: '2.6.1') {
+	implementation (group: 'com.github.SkriptLang', name: 'Skript', version: '2.6.1') {
 		transitive = false
 	}
 
 	// Spigot/Bukkit
-	implementation (group: 'org.spigotmc', name: 'spigot-api', version: '1.17.1-R0.1-SNAPSHOT')
+	implementation (group: 'org.spigotmc', name: 'spigot-api', version: '1.18.1-R0.1-SNAPSHOT')
 
 	// Towny
 	implementation (group: 'com.github.TownyAdvanced', name: 'Towny', version: '0.97.5.1')
