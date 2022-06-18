@@ -47,11 +47,6 @@ public class Types {
 					public String toVariableNameString(Town town) {
 						return town.getName();
 					}
-	
-					@Override
-					public String getVariableNamePattern() {
-						return ".+";
-					}
 
 		}));
 		Classes.registerClass(new ClassInfo<>(Nation.class, "nation")
@@ -79,11 +74,6 @@ public class Types {
 					@Override
 					public String toVariableNameString(Nation nation) {
 						return nation.getName();
-					}
-	
-					@Override
-					public String getVariableNamePattern() {
-						return ".+";
 					}
 
 		}));
@@ -116,11 +106,6 @@ public class Types {
 					public String toVariableNameString(Resident resident) {
 						return resident.getName();
 					}
-	
-					@Override
-					public String getVariableNamePattern() {
-						return ".+";
-					}
 
 		}));
 		Classes.registerClass(new ClassInfo<>(TownyWorld.class, "townyworld")
@@ -152,11 +137,6 @@ public class Types {
 					public String toVariableNameString(TownyWorld world) {
 						return world.getName();
 					}
-	
-					@Override
-					public String getVariableNamePattern() {
-						return ".+";
-					}
 
 		}));
 		Classes.registerClass(new ClassInfo<>(TownBlock.class, "townblock")
@@ -187,11 +167,6 @@ public class Types {
 					@Override
 					public String toVariableNameString(TownBlock block) {
 						return block.getName();
-					}
-	
-					@Override
-					public String getVariableNamePattern() {
-						return ".+";
 					}
 
 		}));
