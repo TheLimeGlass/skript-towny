@@ -32,7 +32,7 @@ dependencies {
 	implementation (group: 'org.eclipse.jdt', name: 'org.eclipse.jdt.annotation', version: '2.2.700')
 
 	// Skript
-	implementation (group: 'com.github.SkriptLang', name: 'Skript', version: '2.6.4') {
+	implementation (group: 'com.github.SkriptLang', name: 'Skript', version: '2.9.5') {
 		transitive = false
 	}
 
